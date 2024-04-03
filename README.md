@@ -33,17 +33,13 @@ python -m venv venv
 pip install -r requirements
 ```
 
-In `./dynameat-api/src/core/settings.py`, change the following lines with your postgres info:
+In `./dynameat-api/src/core/settings.py`, set the `DATABASE` value to:
 
 ```python
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'asteroid-db',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 ```
@@ -81,3 +77,7 @@ npm run dev
 ```
 
 Go to the [website](localhost:5173).
+
+# First steps in the app
+
+At the root of the project you'll find a `sightings.csv` file as a starter to upload it into the app.
