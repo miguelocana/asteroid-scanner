@@ -88,9 +88,9 @@ const submitForm = async () => {
     <div class="bg-white">
       <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
         <div class="ml-4 mt-4">
-          <h3 class="text-xl font-semibold leading-6 text-gray-900">Upload meteorite file</h3>
-          <p class="mt-1 text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit quam corrupti
-            consectetur.</p>
+          <h3 class="text-xl font-semibold leading-6 text-gray-900">Upload sightings file</h3>
+          <p class="mt-1 text-sm text-gray-500">Every time you upload a file or a sighting, our algorithm automatically classifies the asteroid and identifies it if it already exists in the database. You can see the results in the <RouterLink to="/asteroids" class="cursor-pointer text-blue-500">asteroids section</RouterLink>.</p>
+
         </div>
         <div class="ml-4 mt-4 flex-shrink-0">
           <button type="button" @click="open = true"

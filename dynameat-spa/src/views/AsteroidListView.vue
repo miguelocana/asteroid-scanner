@@ -19,11 +19,12 @@ fetch('http://127.0.0.1:8000/api/asteroids/')
     <div v-if="isLoading" class="flex w-full justify-center">
       <Spinner></Spinner>
     </div>
-    <div v-else class="px-4 sm:px-6 lg:px-8">
+
+    <div v-else>
       <div class="sm:flex sm:items-center">
-        <div class="sm:flex-auto">
-          <h1 class="text-base font-semibold leading-6 text-gray-900">Asteroids overview</h1>
-          <p class="mt-2 text-sm text-gray-700">
+        <div class="sm:flex-auto ">
+          <h1 class="text-xl font-semibold leading-6 text-gray-900">Asteroids overview</h1>
+          <p class="mt-1 text-sm text-gray-500">
             A complete view of all the asteroids that our algorithm has managed to classify from the scanner sightings.
           </p>
         </div>
