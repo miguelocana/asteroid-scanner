@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  db:
+    container_name: asteroid-db
+    image: postgres:16
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  api:
+    container_name: asteroid-api
+    build: ./dynameat-api
+    volumes:
+      - ./dynameat-api:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  spa:
+    container_name: asteroid-spa
+    build: ./dynameat-spa
+    volumes:
+      - ./dynameat-spa:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://api:8000/api
+    depends_on:
+      - api
+
+volumes:
+  postgres_volume:
